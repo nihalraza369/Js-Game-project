@@ -1,0 +1,153 @@
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 50px 25px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #00ffcc;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    color: #00ffcc;
+    margin-top: 10px;
+  }
+  
+  .game-area {
+    display: block;
+    text-align: center;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .cell {
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid #00ffcc;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    height: 100px;
+  }
+  
+  .cell:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .cell.win {
+    background-color: #00ffcc;
+    color: #003344;
+  }
+  
+  #status {
+    font-size: 1.5rem;
+    margin-top: 25px;
+    font-weight: bold;
+    color: #ffcc00;
+  }
+  
+  #resetBtn {
+    padding: 12px 30px;
+    background-color: #ffcc00;
+    color: #003344;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  #resetBtn:hover {
+    background-color: #ff9900;
+    transform: scale(1.1);
+  }
+  
+  /* Winning Line Styles */
+  .win-line {
+    position: absolute;
+    background-color: #ffea00;
+    height: 8px;
+    width: 100%;
+    border-radius: 5px;
+    z-index: 2;
+    display: none;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .win-line.horizontal {
+    width: 360px;
+  }
+  
+  .win-line.vertical {
+    height: 360px;
+  }
+  
+  .win-line.diagonal-1 {
+    width: 510px;
+    transform: rotate(45deg);
+  }
+  
+  .win-line.diagonal-2 {
+    width: 510px;
+    transform: rotate(-45deg);
+  }
+  
+  /* Animation for Game Over Text */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  #gameOverText {
+    animation: bounce 0.5s ease infinite;
+  }
+  
