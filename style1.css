@@ -1,0 +1,85 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Background */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #fff;
+    text-align: center;
+    padding-top: 40px;
+  }
+  
+  /* Heading */
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #000;
+  }
+  
+  /* Board layout */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  
+  /* Each Cell */
+  .cell {
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff;
+    font-size: 48px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+  }
+  
+  .cell:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+  
+  /* Player Turn or Result */
+  #status {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Restart Button */
+  button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: 18px;
+    background: #00c9ff;
+    border: none;
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 201, 255, 0.5);
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #92fe9d;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
